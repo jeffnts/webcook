@@ -1,1 +1,1 @@
-web: cd packages/cms && npm start
+web: npm start
