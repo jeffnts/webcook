@@ -3,7 +3,6 @@
     "workspaces":["packages/*"],
     "scripts":{
         "start-cms": "yarn workspace cms start",
-        "start-cms-heroku": "cd packages/cms && npm start",
         "dev-cms": "yarn workspace cms develop",
         "start-web": "yarn workspace web start"        
     }
