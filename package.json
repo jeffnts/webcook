@@ -1,4 +1,10 @@
 {
     "private": true,
-    "workspaces":["packages/*"]
+    "workspaces":["packages/*"],
+    "scripts":{
+        "start-cms": "yarn workspace cms start",
+        "dev-cms": "yarn workspace cms develop",
+        "start-web": "yarn workspace web start",
+        "heroku-postbuild": "./scripts/heroku.build"
+    }
 }
