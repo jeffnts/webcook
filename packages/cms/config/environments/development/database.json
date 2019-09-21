@@ -2,13 +2,18 @@
   "defaultConnection": "default",
   "connections": {
     "default": {
-      "connector": "strapi-hook-bookshelf",
+      "connector": "strapi-hook-mongoose",
       "settings": {
-        "client": "sqlite",
-        "filename": ".tmp/data.db"
+        "database": "${process.env.DEVELOP_DATABASE}",
+        "host": "${process.env.DEVELOP_HOST}",
+        "srv": "true",
+        "port": 27017,
+        "username": "${process.env.DEVELOP_USERNAME}",
+        "password": "${process.env.DEVELOP_PASSWORD}"
       },
       "options": {
-        "useNullAsDefault": true
+        "authenticationDatabase": "${process.env.DEVELOP_AUTH_DATABASE}",
+        "ssl": true
       }
     }
   }

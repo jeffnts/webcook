@@ -12,20 +12,18 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.0",
+    "dotenv": "^8.1.0",
     "eslint": "^6.3.0",
     "eslint-config-airbnb": "^18.0.0",
     "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-react": "^7.14.0"
+    "eslint-plugin-react": "^7.14.0",
+    "find-config": "^1.0.0"
   },
   "dependencies": {
-    "knex": "latest",
     "lodash": "^4.17.5",
-    "sqlite3": "latest",
     "strapi": "3.0.0-beta.16.5",
     "strapi-admin": "3.0.0-beta.16.5",
-    "strapi-hook-bookshelf": "3.0.0-beta.16.5",
-    "strapi-hook-knex": "3.0.0-beta.16.5",
-    "strapi-hook-mongoose": "^3.0.0-alpha.13",
+    "strapi-hook-mongoose": "3.0.0-beta.16.5",
     "strapi-plugin-content-manager": "3.0.0-beta.16.5",
     "strapi-plugin-content-type-builder": "3.0.0-beta.16.5",
     "strapi-plugin-email": "3.0.0-beta.16.5",
@@ -34,14 +32,13 @@
     "strapi-plugin-upload": "3.0.0-beta.16.5",
     "strapi-plugin-users-permissions": "3.0.0-beta.16.5",
     "strapi-provider-upload-aws-s3": "^3.0.0-alpha.15",
-    "strapi-provider-upload-local": "^3.0.0-alpha.15",
     "strapi-utils": "3.0.0-beta.16.5"
   },
   "author": {
     "name": "A Strapi developer"
   },
   "strapi": {
-    "uuid": "e4836128-3607-4ff3-8fd6-602aba920aef"
+    "uuid": "d428fa06-9977-44d1-a0a3-1c94bab31a89"
   },
   "engines": {
     "node": ">=10.0.0",

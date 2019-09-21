@@ -2,19 +2,19 @@
   "defaultConnection": "default",
   "connections": {
     "default": {
-      "connector": "strapi-mongoose",
+      "connector": "strapi-hook-mongoose",
       "settings": {
-        "client": "mongo",
-        "uri": "${process.env.DATABASE_URI || ''}",
-        "host": "${process.env.DATABASE_HOST || 'localhost'}",
+        "host": "${process.env.DATABASE_HOST || '127.0.0.1'}",
         "port": "${process.env.DATABASE_PORT || 27017}",
-        "database": "${process.env.DATABASE_NAME || 'production'}",
+        "srv": "true",
+        "database": "${process.env.DATABASE_NAME || 'strapi'}",
         "username": "${process.env.DATABASE_USERNAME || ''}",
-        "password": "${process.env.DATABASE_PASSWORD || ''}"
+        "password": "${process.env.DATABASE_PASSWORD || ''}",
+        "ssl": true
       },
       "options": {
-        "authenticationDatabase": "${process.env.DATABASE_NAME || 'production'}",
-        "ssl": false
+        "ssl": true,
+        "authenticationDatabase": "${process.env.DATABASE_AUTHENTICATION_DATABASE || ''}"
       }
     }
   }
