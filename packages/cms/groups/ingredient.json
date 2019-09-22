@@ -1,0 +1,29 @@
+{
+  "info": {
+    "name": "ingredient",
+    "description": ""
+  },
+  "connection": "default",
+  "collectionName": "groups_ingredients",
+  "attributes": {
+    "name": {
+      "required": true,
+      "type": "string"
+    },
+    "amount": {
+      "type": "integer",
+      "required": true,
+      "min": 1,
+      "default": 0
+    },
+    "unit": {
+      "enum": [
+        "gram",
+        "kilogram",
+        "unit"
+      ],
+      "required": true,
+      "type": "enumeration"
+    }
+  }
+}

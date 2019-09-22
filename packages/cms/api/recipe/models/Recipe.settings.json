@@ -1,0 +1,52 @@
+{
+  "connection": "default",
+  "collectionName": "recipe",
+  "info": {
+    "name": "recipe",
+    "description": ""
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "name": {
+      "required": true,
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "youtubeLink": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "ingredients": {
+      "group": "ingredient",
+      "required": true,
+      "type": "group",
+      "repeatable": true
+    },
+    "users": {
+      "collection": "user",
+      "via": "recipe",
+      "plugin": "users-permissions"
+    },
+    "tags": {
+      "collection": "tag",
+      "via": "recipes",
+      "dominant": true
+    },
+    "steps": {
+      "group": "step",
+      "repeatable": true,
+      "type": "group"
+    }
+  }
+}
