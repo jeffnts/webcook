@@ -6,7 +6,7 @@
         "dev-cms": "yarn workspace cms develop",
         "start-web": "yarn workspace web start",
         "build-web": "yarn workspace web build",
-        "heroku-postbuild": "./scripts/heroku.build"
+        "heroku-postbuild": "yarn workspace cms build"
     },
     "engines": {
         "node": ">=10.0.0",
