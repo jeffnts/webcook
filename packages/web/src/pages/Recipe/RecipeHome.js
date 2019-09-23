@@ -1,12 +1,14 @@
 import React from 'react'
 import { useQuery } from '@apollo/react-hooks'
 
-import { FETCH_RECIPES } from '@webbook/common/graphql/queries/Recipe'
+import { graphql } from '@webcook/common'
 
 import { MDBRow, MDBCol, MDBProgress  } from "mdbreact"
 import { Container } from './RecipeStyle'
 
 import { Box } from '../../components/Recipe'
+
+const { queries: { FETCH_RECIPES } } = graphql()
 
 export const RecipeHome = () => {
   const { loading, data } = useQuery(FETCH_RECIPES)

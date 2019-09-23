@@ -1,12 +1,15 @@
 {
   "connection": "default",
-  "collectionName": "",
+  "collectionName": "tag",
   "info": {
     "name": "tag",
     "description": ""
   },
   "options": {
-    "timestamps": true
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
   },
   "attributes": {
     "name": {
@@ -15,6 +18,20 @@
     "recipes": {
       "collection": "recipe",
       "via": "tags"
+    },
+    "color": {
+      "enum": [
+        "default",
+        "primary",
+        "success",
+        "info",
+        "warning",
+        "danger",
+        "light",
+        "dark"
+      ],
+      "type": "enumeration",
+      "required": true
     }
   }
 }
