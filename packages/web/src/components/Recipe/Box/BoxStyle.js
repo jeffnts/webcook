@@ -1,5 +1,13 @@
 import styled from 'styled-components'
 
-export const Wrapper = styled.div`
+import { MDBCard } from 'mdbreact'
 
+export const Wrapper = styled(MDBCard)`
+  span{
+    padding: 5px;
+      a{
+        color: white;
+        padding: 5px;
+      }
+    }
 `
