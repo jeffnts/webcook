@@ -16,6 +16,7 @@ const Box = ({history}) => {
   const { state, dispatch } = useContext(UserContext)
 
   const [ isOpenRegister, setIsOpenRegister ] = useState(false)
+  const [ isLoadingAuthentication, setIisLoadingAuthentication] = useState(false)
 
   return (
     <Wrapper>
@@ -34,6 +35,8 @@ const Box = ({history}) => {
             const {identifier, password} = values
 
             try {
+              setIisLoadingAuthentication(true)
+
               const {data} = await axios
                 .post('http://localhost:1337/auth/local', {
                   identifier,
@@ -46,11 +49,11 @@ const Box = ({history}) => {
               dispatch({
                 type: SET_AUTHENTICATION,
                 payload: {
-                  isAuthenticated: true,
-                  isLoadingAuthentication: true
+                  isAuthenticated: true
                 }
               })
 
+              setIisLoadingAuthentication(false)
               history.push('/receitas')
             } catch (error) {
               console.log(error.message)
@@ -90,8 +93,8 @@ const Box = ({history}) => {
 
                 <Button
                   primary
-                  loading={state.isLoadingAuthentication}
-                  disabled={state.isLoadingAuthentication}
+                  loading={isLoadingAuthentication}
+                  disabled={isLoadingAuthentication}
                 >
                   Entrar
                 </Button>

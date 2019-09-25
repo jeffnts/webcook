@@ -3,8 +3,7 @@ import { SET_AUTHENTICATION } from '../../store/actionTypes/userActionTypes'
 export const initialState = {
   _id: localStorage.getItem('id'),
   token: localStorage.getItem('token'),
-  isAuthenticated: false,
-  isLoadingAuthentication: false
+  isAuthenticated: false
 }
 
 
@@ -17,8 +16,7 @@ export const UserReducer = (state, action) => {
         ...state,
         _id: localStorage.getItem('id'),
         token: localStorage.getItem('token'),
-        isAuthenticated: action.payload.isAuthenticated,
-        isLoadingAuthentication: action.payload.isLoadingAuthentication
+        isAuthenticated: action.payload.isAuthenticated
       }
     }
 
