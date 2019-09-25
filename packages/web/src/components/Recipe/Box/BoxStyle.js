@@ -1,13 +1,13 @@
 import styled from 'styled-components'
 
-import { MDBCard } from 'mdbreact'
+import { Card as SMCard } from 'semantic-ui-react'
 
-export const Wrapper = styled(MDBCard)`
-  span{
-    padding: 5px;
-      a{
-        color: white;
-        padding: 5px;
-      }
-    }
+export const Card = styled(SMCard)`
+  img{
+    width: border-box;
+  }
+  
+  .label{ 
+    cursor: pointer;
+  }  
 `

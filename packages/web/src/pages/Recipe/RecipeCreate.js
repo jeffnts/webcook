@@ -1,9 +1,13 @@
 import React from 'react'
 
+import { DefaultLayout } from '../../layouts/DefaultLayout'
+
 export const RecipeCreate = () => {
   return (
-    <div>
-      <h1>Criar Receita</h1>
-    </div>
+   <DefaultLayout>
+     <div>
+       <h1>Criar Receita</h1>
+     </div>
+   </DefaultLayout>
   )
 }

@@ -21,14 +21,19 @@
     },
     "color": {
       "enum": [
-        "default",
-        "primary",
-        "success",
-        "info",
-        "warning",
-        "danger",
-        "light",
-        "dark"
+        "red",
+        "orange",
+        "yellow",
+        "olive",
+        "green",
+        "teal",
+        "blue",
+        "violet",
+        "purple",
+        "pink",
+        "brown",
+        "grey",
+        "black"
       ],
       "type": "enumeration",
       "required": true

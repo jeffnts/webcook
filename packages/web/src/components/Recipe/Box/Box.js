@@ -2,62 +2,45 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-import {
-  MDBCardBody,
-  MDBCardImage,
-  MDBCardTitle,
-  MDBCardText,
-  MDBBadge,
-  MDBBtn,
-  MDBIcon } from 'mdbreact'
-import { Wrapper } from './BoxStyle'
+import { Image, Label } from 'semantic-ui-react'
+import { Card } from './BoxStyle'
 
 const Box = ({data}) => {
+
   return (
-    <Wrapper>
+    <Card>
       <Link to={{pathname: '/receitas/detalhes', state: data.id}}>
-        <MDBCardImage
-          className="img-fluid"
-          src={process.env.node !== 'production' && process.env.REACT_APP_STRAPI_URL+data.image.url}
-          waves
+        <Image
+          src={
+            process.env.NODE_ENV !== 'production'
+              ? process.env.REACT_APP_STRAPI_URL + data.image.url
+              : data.image.url
+          }
         />
       </Link>
 
-      <MDBCardBody>
-        <MDBCardTitle
-          className='text-center'
-        >
-          {data.name}
-        </MDBCardTitle>
+      <Card.Content>
+        <Card.Header>{data.name}</Card.Header>
 
-        <MDBCardText>
-         {
-           data.tags.map(tag =>(
-             <MDBBadge
-               key={tag.id}
-               color={tag.color}
-               className='m-2'
-             >
-               <Link>
-                 {tag.name}
-               </Link>
-             </MDBBadge>
-           ))
-         }
-        </MDBCardText>
-
-        <Link to={{pathname: '/receitas/detalhes', state: data.id}}>
-          <MDBBtn color="info">
-            <MDBIcon icon="eye" className="mr-1" /> Ver
-          </MDBBtn>
-        </Link>
-      </MDBCardBody>
-    </Wrapper>
+        <Card.Description>
+          {
+            data.tags && data.tags.map(tag =>(
+              <Label
+                key={tag.id}
+                color={tag.color}
+              >
+                {tag.name}
+              </Label>
+            ))
+          }
+        </Card.Description>
+      </Card.Content>
+    </Card>
   )
 }
 
 export default Box
 
 Box.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.object
 }

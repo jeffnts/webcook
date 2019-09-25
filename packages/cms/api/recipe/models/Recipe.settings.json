@@ -33,11 +33,6 @@
       "type": "group",
       "repeatable": true
     },
-    "users": {
-      "collection": "user",
-      "via": "recipe",
-      "plugin": "users-permissions"
-    },
     "steps": {
       "group": "step",
       "repeatable": true,
@@ -47,6 +42,11 @@
       "collection": "tag",
       "dominant": true,
       "via": "recipes"
+    },
+    "users": {
+      "collection": "user",
+      "via": "recipe",
+      "plugin": "users-permissions"
     }
   }
 }

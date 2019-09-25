@@ -4,18 +4,22 @@
   "private": true,
   "dependencies": {
     "@apollo/react-hooks": "^3.1.1",
+    "@webcook/common": "1.0.0",
     "apollo-cache-inmemory": "^1.6.3",
     "apollo-client": "^2.6.4",
+    "apollo-link-context": "^1.0.19",
     "apollo-link-http": "^1.5.16",
-    "bootstrap-css-only": "^4.3.1",
-    "mdbreact": "^4.20.0",
+    "axios": "^0.19.0",
+    "formik": "^1.5.8",
+    "jsonwebtoken": "^8.5.1",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-router-dom": "^5.0.1",
     "react-scripts": "3.1.1",
-    "styled-components": "^4.3.2",
-    "@webcook/common": "1.0.0"
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.1",
+    "styled-components": "^4.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -38,11 +42,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.11.1"
-  },
-  "engines": {
-    "node": ">=10.0.0",
-    "yarn": "1.17.3"
-  }
+  "devDependencies": {}
 }

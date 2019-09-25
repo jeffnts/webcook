@@ -1,11 +1,15 @@
 import React from 'react'
 
-import { RecipeProvider } from './contexts'
+import {
+  UserProvider,
+  RecipeProvider } from './contexts'
 
 export const StoreProvider = ({children}) => {
   return (
-    <RecipeProvider>
-      {children}
-    </RecipeProvider>
+   <UserProvider>
+     <RecipeProvider>
+       {children}
+     </RecipeProvider>
+   </UserProvider>
   )
 }

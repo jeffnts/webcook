@@ -1,38 +1,57 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useQuery } from '@apollo/react-hooks'
 
 import { graphql } from '@webcook/common'
 
-import { MDBRow, MDBCol, MDBProgress  } from "mdbreact"
-import { Container } from './RecipeStyle'
+import { DefaultLayout } from '../../layouts/DefaultLayout'
+
+import { Placeholder } from 'semantic-ui-react'
+import { Container } from '../../components/Layout/UI'
+
+import { UserContext } from '../../store/contexts'
 
 import { Box } from '../../components/Recipe'
 
-const { queries: { FETCH_RECIPES } } = graphql()
+const { queries: { FETCH_RECIPES } } = graphql
 
 export const RecipeHome = () => {
-  const { loading, data } = useQuery(FETCH_RECIPES)
+  const { state } = useContext(UserContext)
+  const {_id } = state
+
+  const { loading, data } = useQuery(FETCH_RECIPES, {
+    variables:{
+      where:{
+        users:{
+          _id
+        }
+      }
+    }
+  })
 
   return (
-    <Container>
-      <MDBRow>
+    <DefaultLayout>
+      <Container>
         {
           loading
-            ? <MDBProgress material preloader />
-            : data.recipes.map(recipe => (
-                <MDBCol
-                  xl='4' lg='6' md ='6' sm='12'
-                  className='my-2'
-                  key={recipe.id}
-                >
-                  <Box
-                    data={recipe}
-                  />
-                </MDBCol>
-              ))
+            ? <Placeholder>
+              <Placeholder.Line length='full' />
+              <Placeholder.Line length='very long' />
+              <Placeholder.Line length='long' />
+              <Placeholder.Line length='medium' />
+              <Placeholder.Line length='short' />
+              <Placeholder.Line length='very short' />
+            </Placeholder>
+            : data.recipes.length > 0
+                ? data.recipes.map(recipe =>(
+                    <Box
+                      key={recipe.id}
+                      data={recipe}
+                    />
+                  ))
+                : <h1>Sem receitas cadastradas :(</h1>
         }
-      </MDBRow>
-    </Container>
+      </Container>
+    </DefaultLayout>
   )
 }
 

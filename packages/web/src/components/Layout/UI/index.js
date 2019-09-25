@@ -1,9 +1,9 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  margin-top: 40px;
+  margin: 40px;
 `
 
-export const Wrapper = styled.div`
-
+export const Row = styled.div`
+  display: grid;
 `

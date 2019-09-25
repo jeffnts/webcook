@@ -1,6 +1,6 @@
 {
-  "collectionName": "users-permissions_user",
   "connection": "default",
+  "collectionName": "users-permissions_user",
   "info": {
     "name": "user",
     "description": ""
@@ -59,6 +59,14 @@
     "recipe": {
       "model": "recipe",
       "via": "users"
+    },
+    "name": {
+      "type": "string"
+    },
+    "photo": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
     }
   }
 }
