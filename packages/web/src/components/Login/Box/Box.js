@@ -38,7 +38,7 @@ const Box = ({history}) => {
               setIisLoadingAuthentication(true)
 
               const {data} = await axios
-                .post('http://localhost:1337/auth/local', {
+                .post(`${process.env.REACT_APP_STRAPI_URL}/auth/local`, {
                   identifier,
                   password
                 })
